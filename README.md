@@ -19,13 +19,14 @@ QuickPrint.x where x = the type of data structure, currently simple lists/arrays
 
 ```ocaml
 QuickPrint.strings_list ~prefix:"string_list: "
-[ "hello"; "world"; "my"; "name"; "is" ]; (_ output: string_list: [hello; world; my; name; is] _)
+[ "hello"; "world"; "my"; "name"; "is" ]; (* output: string_list: [hello; world; my; name; is] *)
 
 let ht = Hashtbl.create 3 in
 Hashtbl.add ht 1 [1.1234; 2.1235; 3.23456];
 Hashtbl.add ht 2 [4.98765; 5.87654; 6.76543];
 Hashtbl.add ht 3 [7.1; 8.01; 9.001];
-QuickPrint.hashtable_int_float_list ~prefix:"MyHashTable: " ~precision:2 ht (_ output: MyHashTable: {(1, [1.12; 2.12; 3.23]); (2, [4.99; 5.88; 6.77]); (3, [7.10; 8.01; 9.00]); } _)
+QuickPrint.hashtable_int_float_list ~prefix:"MyHashTable: " ~precision:2 ht
+(* output: MyHashTable: {(1, [1.12; 2.12; 3.23]); (2, [4.99; 5.88; 6.77]); (3, [7.10; 8.01; 9.00]); } *)
 ```
 
 ## Contribute
