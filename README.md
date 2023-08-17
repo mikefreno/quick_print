@@ -1,3 +1,36 @@
 # QuickPrint
 
-An Ocaml library to quickly print lists, arrays, and hashtables currently. More to come.
+QuickPrint is an OCaml library that allows quick and easy pretty-printing of lists, arrays, Hashtables and more. Its main goal is to simplify data visualization during learning and debugging.
+
+## Installation
+
+Install QuickPrint with OPAM:
+
+\`\`\`bash
+opam install QuickPrint
+\`\`\`
+
+## Usage
+
+QuickPrint.x where x = the type of data structure, currently simple lists/arrays and many hashtables are supported.
+Optional (prefix) prints same line before data structure.
+Optional (precision) on float data types gives decimal precision 1.2345 with precision 1 -> 1.2, precision 2 -> 1.23 and so on
+
+\`\`\`ocaml
+QuickPrint.strings_list ~prefix:"string_list: "
+[ "hello"; "world"; "my"; "name"; "is" ]; (_ output: string_list: [hello; world; my; name; is] _)
+
+let ht = Hashtbl.create 3 in
+Hashtbl.add ht 1 [1.1234; 2.1235; 3.23456];
+Hashtbl.add ht 2 [4.98765; 5.87654; 6.76543];
+Hashtbl.add ht 3 [7.1; 8.01; 9.001];
+QuickPrint.hashtable_int_float_list ~prefix:"MyHashTable: " ~precision:2 ht (_ output: MyHashTable: {(1, [1.12; 2.12; 3.23]); (2, [4.99; 5.88; 6.77]); (3, [7.10; 8.01; 9.00]); } _)
+\`\`\`
+
+## Contribute
+
+Contributions to QuickPrint are welcome. Feel free to submit issues and pull requests.
+
+## License
+
+This project is licensed under the terms of the MIT license. For more details, see the [LICENSE](/LICENSE) file.
