@@ -11,7 +11,7 @@ homepage: "https://github.com/mikefreno/quick_print"
 doc: "https://mikefreno.github.io/quick_print/"
 bug-reports: "https://github.com/mikefreno/quick_print/issues"
 depends: [
-  "ocaml"
+  "ocaml" {>= "4.02"}
   "dune" {>= "3.10"}
   "odoc" {with-doc}
 ]

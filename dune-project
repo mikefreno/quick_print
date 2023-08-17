@@ -19,7 +19,10 @@
  (name quick_print)
  (synopsis "Quick and easy printing for lists, arrays, etc")
  (description "Allows quick printing for lists, arrays, Hashtables etc. Useful for learning/ quick debugging")
- (depends ocaml dune)
+ (depends
+  (ocaml (>= 4.02))
+  dune
+ )
  (tags
   (printing, arrays, lists)))
 
