@@ -1,3 +1,3 @@
 (executable
  (name test)
- (libraries QuickPrint))
+ (libraries quick_print))

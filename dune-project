@@ -1,11 +1,11 @@
 (lang dune 3.10)
 
-(name QuickPrint)
+(name quick_print)
 
 (generate_opam_files true)
 
 (source
- (github MikeFreno/QuickPrint))
+ (github mikefreno/quick_print))
 
 (authors "Michael Freno")
 
@@ -13,13 +13,13 @@
 
 (license MIT)
 
-(documentation https://url/to/documentation)
+(documentation https://mikefreno.github.io/quick_print/)
 
 (package
- (name QuickPrint)
- (synopsis "Quick printing for lists, arrays, etc")
+ (name quick_print)
+ (synopsis "Quick and easy printing for lists, arrays, etc")
  (description "Allows quick printing for lists, arrays, Hashtables etc. Useful for learning/ quick debugging")
- (depends ocaml dune fmt)
+ (depends ocaml dune)
  (tags
   (printing, arrays, lists)))
 
