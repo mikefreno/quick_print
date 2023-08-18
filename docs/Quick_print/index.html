@@ -12,7 +12,9 @@
     </script>
   </head>
   <body class="odoc">
-    <nav class="odoc-nav"><a href="../index.html">Quick_print</a></nav>
+    <nav class="odoc-nav">
+      <a href="../index.html">quick_print</a> &#x00BB; Quick_print
+    </nav>
     <header class="odoc-preamble">
       <h1>
         Module <code><span>Quick_print</span></code>
@@ -308,6 +310,117 @@
           <p>
             <code>hashtable_int_float ~prefix ~precision ht</code> prints the
             entries of a hashtable <code>ht</code> (with integer keys and
+            floating point values) to the standard output, using the
+            <code>prefix</code>. The floating point values are shown with the
+            given <code>precision</code>. Each entry is represented as a tuple
+            (key, value).
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-hashtable_string_string">
+          <a href="#val-hashtable_string_string" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> hashtable_string_string :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span
+                  ><span>(string, string)</span>
+                  <span class="xref-unresolved">Stdlib</span>.Hashtbl.t</span
+                >
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>hashtable_string_string ~prefix ht</code> prints the entries
+            of a hashtable <code>ht</code> (with string keys and string values)
+            to the standard output, using the <code>prefix</code>. Each entry is
+            represented as a tuple (key, value).
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-hashtable_string_char">
+          <a href="#val-hashtable_string_char" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> hashtable_string_char :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span
+                  ><span>(string, char)</span>
+                  <span class="xref-unresolved">Stdlib</span>.Hashtbl.t</span
+                >
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>hashtable_string_char ~prefix ht</code> prints the entries of
+            a hashtable <code>ht</code> (with string keys and character values)
+            to the standard output, using the <code>prefix</code>. Each entry is
+            represented as a tuple (key, value).
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-hashtable_string_int">
+          <a href="#val-hashtable_string_int" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> hashtable_string_int :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span
+                  ><span>(string, int)</span>
+                  <span class="xref-unresolved">Stdlib</span>.Hashtbl.t</span
+                >
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>hashtable_int_int ~prefix ht</code> prints the entries of a
+            hashtable <code>ht</code> (with string keys and integer values) to
+            the standard output, using the <code>prefix</code>. Each entry is
+            represented as a tuple (key, value).
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-hashtable_string_float">
+          <a href="#val-hashtable_string_float" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> hashtable_string_float :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span>?precision:int <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span
+                  ><span>(string, float)</span>
+                  <span class="xref-unresolved">Stdlib</span>.Hashtbl.t</span
+                >
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>hashtable_int_float ~prefix ~precision ht</code> prints the
+            entries of a hashtable <code>ht</code> (with string keys and
             floating point values) to the standard output, using the
             <code>prefix</code>. The floating point values are shown with the
             given <code>precision</code>. Each entry is represented as a tuple
