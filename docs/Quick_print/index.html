@@ -113,6 +113,452 @@
         </div>
       </div>
       <div class="odoc-spec">
+        <div
+          class="spec value anchored"
+          id="val-print_string_string_tuple_list"
+        >
+          <a href="#val-print_string_string_tuple_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> print_string_string_tuple_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>(string * string)</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>print_string_string_tuple_list ?prefix list</code> prints a
+            list of <code>(string, string)</code> tuples to standard output.
+            Each tuple is formatted as <code>(string1, string2)</code>. Tuples
+            are separated by a semicolon and a space. The optional
+            <code>prefix</code> argument (defaulting to an empty string if
+            omitted) is printed before the list.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-print_string_char_tuple_list">
+          <a href="#val-print_string_char_tuple_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> print_string_char_tuple_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>(string * char)</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>print_string_char_tuple_list ?prefix list</code> prints a list
+            of <code>(string, char)</code> tuples to standard output. Each tuple
+            is formatted as <code>(string, c)</code>. Tuples are separated by a
+            semicolon and a space. The optional <code>prefix</code> argument
+            (defaulting to an empty string if omitted) is printed before the
+            list.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-print_string_int_tuple_list">
+          <a href="#val-print_string_int_tuple_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> print_string_int_tuple_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>(string * int)</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>print_string_int_tuple_list ?prefix list</code> prints a list
+            of <code>(string, int)</code> tuples to standard output. Each tuple
+            is formatted as <code>(string, n)</code>. Tuples are separated by a
+            semicolon and a space. The optional <code>prefix</code> argument
+            (defaulting to an empty string if omitted) is printed before the
+            list.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-print_string_float_tuple_list">
+          <a href="#val-print_string_float_tuple_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> print_string_float_tuple_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span>?precision:int <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>(string * float)</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>print_string_float_tuple_list ?prefix ?precision list</code>
+            prints a list of <code>(string, float)</code> tuples to standard
+            output. Each tuple is formatted as <code>(string, f)</code>, where
+            <code>f</code> has <code>precision</code> decimal places. Tuples are
+            separated by a semicolon and a space. The optional
+            <code>prefix</code> argument (defaulting to an empty string if
+            omitted) is printed before the list. The optional
+            <code>precision</code> argument (defaulting to 2 if omitted) sets
+            the number of decimal places for floats.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-print_char_string_tuple_list">
+          <a href="#val-print_char_string_tuple_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> print_char_string_tuple_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>(char * string)</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>print_char_string_tuple_list ?prefix list</code> prints a list
+            of <code>(char, string)</code> tuples to standard output. Each tuple
+            is formatted as <code>(c, string)</code>. Tuples are separated by a
+            semicolon and a space. The optional <code>prefix</code> argument
+            (defaulting to an empty string if omitted) is printed before the
+            list.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-print_char_char_tuple_list">
+          <a href="#val-print_char_char_tuple_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> print_char_char_tuple_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>(char * char)</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>print_char_char_tuple_list ?prefix list</code> prints a list
+            of <code>(char, char)</code> tuples to standard output. Each tuple
+            is formatted as <code>(c1, c2)</code>. Tuples are separated by a
+            semicolon and a space. The optional <code>prefix</code> argument
+            (defaulting to an empty string if omitted) is printed before the
+            list.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-print_char_int_tuple_list">
+          <a href="#val-print_char_int_tuple_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> print_char_int_tuple_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>(char * int)</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>print_char_int_tuple_list ?prefix list</code> prints a list of
+            <code>(char, int)</code> tuples to standard output. Each tuple is
+            formatted as <code>(c, n)</code>. Tuples are separated by a
+            semicolon and a space. The optional <code>prefix</code> argument
+            (defaulting to an empty string if omitted) is printed before the
+            list.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-print_char_float_tuple_list">
+          <a href="#val-print_char_float_tuple_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> print_char_float_tuple_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span>?precision:int <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>(char * float)</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>print_char_float_tuple_list ?prefix ?precision list</code>
+            prints a list of <code>(char, float)</code> tuples on standard
+            output. Each tuple is formatted as <code>(c, f.##)</code>, where f
+            has <code>precision</code> decimal places. Tuples are separated by a
+            semicolon and a space. The optional <code>prefix</code> argument
+            (defaulting to an empty string if omitted) will be printed before
+            the list. The optional <code>precision</code> argument (defaulting
+            to 2 if omitted) sets the number of decimal places for floats.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-print_int_string_tuple_list">
+          <a href="#val-print_int_string_tuple_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> print_int_string_tuple_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>(int * string)</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>print_int_string_tuple_list ?prefix list</code> prints a list
+            of <code>(int, string)</code> tuples to standard output. Each tuple
+            is formatted as <code>(n, string)</code>. Tuples are separated by a
+            semicolon and a space. The optional <code>prefix</code> argument
+            (defaulting to an empty string if omitted) is printed before the
+            list.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-print_int_char_tuple_list">
+          <a href="#val-print_int_char_tuple_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> print_int_char_tuple_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>(int * char)</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>print_int_char_tuple_list ?prefix list</code> prints a list of
+            <code>(int, char)</code> tuples to standard output. Each tuple is
+            formatted as <code>(n, c)</code>. Tuples are separated by a
+            semicolon and a space. The optional <code>prefix</code> argument
+            (defaulting to an empty string if omitted) is printed before the
+            list.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-print_int_int_tuple_list">
+          <a href="#val-print_int_int_tuple_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> print_int_int_tuple_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>(int * int)</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>print_int_int_tuple_list ?prefix list</code> prints a list of
+            <code>(int, int)</code> tuples to standard output. Each tuple is
+            formatted as <code>(n, m)</code>. Tuples are separated by a
+            semicolon and a space. The optional <code>prefix</code> argument
+            (defaulting to an empty string if omitted) is printed before the
+            list.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-print_int_float_tuple_list">
+          <a href="#val-print_int_float_tuple_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> print_int_float_tuple_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span>?precision:int <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>(int * float)</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>print_int_float_tuple_list ?prefix ?precision list</code>
+            prints a list of <code>(int, float)</code> tuples to standard
+            output. Each tuple is formatted as <code>(n, f)</code>, where
+            <code>f</code> is a float with <code>precision</code> decimal
+            places. Tuples are separated by a semicolon and a space. The
+            optional <code>prefix</code> argument (defaulting to an empty string
+            if omitted) is printed before the list. The optional
+            <code>precision</code> argument (defaulting to 2 if omitted) sets
+            the number of decimal places for float.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-print_float_string_tuple_list">
+          <a href="#val-print_float_string_tuple_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> print_float_string_tuple_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span>?precision:int <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>(float * string)</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>print_float_string_tuple_list ?prefix ?precision list</code>
+            prints a list of <code>(float, string)</code> tuples to standard
+            output. Each tuple is formatted as <code>(f, string)</code>, where
+            <code>f</code> is a float with <code>precision</code> decimal
+            places. Tuples are separated by a semicolon and a space. The
+            optional <code>prefix</code> argument (defaulting to an empty string
+            if omitted) is printed before the list. The optional
+            <code>precision</code> argument (defaulting to 2 if omitted) sets
+            the number of decimal places for the float.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-print_float_char_tuple_list">
+          <a href="#val-print_float_char_tuple_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> print_float_char_tuple_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span>?precision:int <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>(float * char)</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>print_float_char_tuple_list ?prefix ?precision list</code>
+            prints a list of <code>(float, char)</code> tuples to standard
+            output. Each tuple is formatted as <code>(f, c)</code>, where
+            <code>f</code> is a float with <code>precision</code> decimal
+            places. Tuples are separated by a semicolon and a space. The
+            optional <code>prefix</code> argument (defaulting to an empty string
+            if omitted) is printed before the list. The optional
+            <code>precision</code> argument (defaulting to 2 if omitted) sets
+            the number of decimal places for the float.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-print_float_int_tuple_list">
+          <a href="#val-print_float_int_tuple_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> print_float_int_tuple_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span>?precision:int <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>(float * int)</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>print_float_int_tuple_list ?prefix ?precision list</code>
+            prints a list of <code>(float, int)</code> tuples to standard
+            output. Each tuple is formatted as <code>(f, n)</code>, where
+            <code>f</code> is a float with <code>precision</code> decimal
+            places. Tuples are separated by a semicolon and a space. The
+            optional <code>prefix</code> argument (defaulting to an empty string
+            if omitted) is printed before the list. The optional
+            <code>precision</code> argument (defaulting to 2 if omitted) sets
+            the number of decimal places for the float.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-print_float_float_tuple_list">
+          <a href="#val-print_float_float_tuple_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> print_float_float_tuple_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span>?precision:int <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>(float * float)</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>print_float_float_tuple_list ?prefix ?precision list</code>
+            prints a list of <code>(float, float)</code> tuples to standard
+            output. Each tuple is formatted as <code>(f1, f2)</code>, where
+            <code>f1</code> and <code>f2</code> are floats with
+            <code>precision</code> decimal places. Tuples are separated by a
+            semicolon and a space. The optional <code>prefix</code> argument
+            (defaulting to an empty string if omitted) is printed before the
+            list. The optional <code>precision</code> argument (defaulting to 2
+            if omitted) sets the number of decimal places for the floats.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
         <div class="spec value anchored" id="val-strings_array">
           <a href="#val-strings_array" class="anchor"></a
           ><code
