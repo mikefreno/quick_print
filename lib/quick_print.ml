@@ -31,6 +31,174 @@ let float_list ?(prefix = "") ?(precision = 2) list =
   Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
   Format.fprintf Format.std_formatter "]\n"
 
+(** [print_string_string_tuple_list ?prefix list] prints a list of [(string, string)] tuples to standard output.
+    Each tuple is formatted as [(string1, string2)]. Tuples are separated by a semicolon and a space.
+    The optional [prefix] argument (defaulting to an empty string if omitted) is printed before the list. *)
+let print_string_string_tuple_list ?(prefix = "") list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt (a, b) = Format.fprintf fmt "(%s, %s)" a b in
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [print_string_char_tuple_list ?prefix list] prints a list of [(string, char)] tuples to standard output.
+    Each tuple is formatted as [(string, c)]. Tuples are separated by a semicolon and a space.
+    The optional [prefix] argument (defaulting to an empty string if omitted) is printed before the list. *)  
+let print_string_char_tuple_list ?(prefix = "") list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt (a, b) = Format.fprintf fmt "(%s, %c)" a b in
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [print_string_int_tuple_list ?prefix list] prints a list of [(string, int)] tuples to standard output.
+    Each tuple is formatted as [(string, n)]. Tuples are separated by a semicolon and a space.
+    The optional [prefix] argument (defaulting to an empty string if omitted) is printed before the list. *)
+let print_string_int_tuple_list ?(prefix = "") list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt (a, b) = Format.fprintf fmt "(%s, %d)" a b in
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [print_string_float_tuple_list ?prefix ?precision list] prints a list of [(string, float)] tuples to standard output.
+    Each tuple is formatted as [(string, f)], where [f] has [precision] decimal places.
+    Tuples are separated by a semicolon and a space.
+    The optional [prefix] argument (defaulting to an empty string if omitted) is printed before the list.
+    The optional [precision] argument (defaulting to 2 if omitted) sets the number of decimal places for floats. *)
+let print_string_float_tuple_list ?(prefix = "") ?(precision = 2) list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt (a, b) = Format.fprintf fmt "(%s, %.*f)" a precision b in
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [print_char_string_tuple_list ?prefix list] prints a list of [(char, string)] tuples to standard output.
+    Each tuple is formatted as [(c, string)]. Tuples are separated by a semicolon and a space.
+    The optional [prefix] argument (defaulting to an empty string if omitted) is printed before the list. *)
+let print_char_string_tuple_list ?(prefix = "") list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt (a, b) = Format.fprintf fmt "(%c, %s)" a b in
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [print_char_char_tuple_list ?prefix list] prints a list of [(char, char)] tuples to standard output.
+    Each tuple is formatted as [(c1, c2)]. Tuples are separated by a semicolon and a space.
+    The optional [prefix] argument (defaulting to an empty string if omitted) is printed before the list. *)
+let print_char_char_tuple_list ?(prefix = "") list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt (a, b) = Format.fprintf fmt "(%c, %c)" a b in
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [print_char_int_tuple_list ?prefix list] prints a list of [(char, int)] tuples to standard output.
+    Each tuple is formatted as [(c, n)]. Tuples are separated by a semicolon and a space.
+    The optional [prefix] argument (defaulting to an empty string if omitted) is printed before the list. *)
+let print_char_int_tuple_list ?(prefix = "") list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt (a, b) = Format.fprintf fmt "(%c, %d)" a b in
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [print_char_float_tuple_list ?prefix ?precision list] prints a list of [(char, float)] tuples on standard output.
+    Each tuple is formatted as [(c, f.##)], where f has [precision] decimal places. Tuples are separated by a semicolon and a space.
+    The optional [prefix] argument (defaulting to an empty string if omitted) will be printed before the list. 
+    The optional [precision] argument (defaulting to 2 if omitted) sets the number of decimal places for floats. *)
+let print_char_float_tuple_list ?(prefix = "") ?(precision = 2) list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt (a, b) = Format.fprintf fmt "(%c, %.*f)" a precision b in
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [print_int_string_tuple_list ?prefix list] prints a list of [(int, string)] tuples to standard output.
+    Each tuple is formatted as [(n, string)]. Tuples are separated by a semicolon and a space.
+    The optional [prefix] argument (defaulting to an empty string if omitted) is printed before the list. *)
+let print_int_string_tuple_list ?(prefix = "") list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt (a, b) = Format.fprintf fmt "(%d, %s)" a b in
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [print_int_char_tuple_list ?prefix list] prints a list of [(int, char)] tuples to standard output.
+    Each tuple is formatted as [(n, c)]. Tuples are separated by a semicolon and a space.
+    The optional [prefix] argument (defaulting to an empty string if omitted) is printed before the list. *)
+let print_int_char_tuple_list ?(prefix = "") list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt (a, b) = Format.fprintf fmt "(%d, %c)" a b in
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [print_int_int_tuple_list ?prefix list] prints a list of [(int, int)] tuples to standard output.
+    Each tuple is formatted as [(n, m)]. Tuples are separated by a semicolon and a space.
+    The optional [prefix] argument (defaulting to an empty string if omitted) is printed before the list. *)
+let print_int_int_tuple_list ?(prefix = "") list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt (a, b) = Format.fprintf fmt "(%d, %d)" a b in
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [print_int_float_tuple_list ?prefix ?precision list] prints a list of [(int, float)] tuples to standard output.
+    Each tuple is formatted as [(n, f)], where [f] is a float with [precision] decimal places. Tuples are separated by a semicolon and a space.
+    The optional [prefix] argument (defaulting to an empty string if omitted) is printed before the list.
+    The optional [precision] argument (defaulting to 2 if omitted) sets the number of decimal places for float. *)
+let print_int_float_tuple_list ?(prefix = "") ?(precision = 2) list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt (a, b) = Format.fprintf fmt "(%d, %.*f)" a precision b in
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [print_float_string_tuple_list ?prefix ?precision list] prints a list of [(float, string)] tuples to standard output.
+    Each tuple is formatted as [(f, string)], where [f] is a float with [precision] decimal places. Tuples are separated by a semicolon and a space.
+    The optional [prefix] argument (defaulting to an empty string if omitted) is printed before the list.
+    The optional [precision] argument (defaulting to 2 if omitted) sets the number of decimal places for the float. *)
+let print_float_string_tuple_list ?(prefix = "") ?(precision = 2) list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt (a, b) = Format.fprintf fmt "(%.*f, %s)" precision a b in
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [print_float_char_tuple_list ?prefix ?precision list] prints a list of [(float, char)] tuples to standard output.
+    Each tuple is formatted as [(f, c)], where [f] is a float with [precision] decimal places. Tuples are separated by a semicolon and a space.
+    The optional [prefix] argument (defaulting to an empty string if omitted) is printed before the list.
+    The optional [precision] argument (defaulting to 2 if omitted) sets the number of decimal places for the float. *)
+let print_float_char_tuple_list ?(prefix = "") ?(precision = 2) list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt (a, b) = Format.fprintf fmt "(%.*f, %c)" precision a b in
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [print_float_int_tuple_list ?prefix ?precision list] prints a list of [(float, int)] tuples to standard output.
+    Each tuple is formatted as [(f, n)], where [f] is a float with [precision] decimal places. Tuples are separated by a semicolon and a space.
+    The optional [prefix] argument (defaulting to an empty string if omitted) is printed before the list.
+    The optional [precision] argument (defaulting to 2 if omitted) sets the number of decimal places for the float. *)
+let print_float_int_tuple_list ?(prefix = "") ?(precision = 2) list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt (a, b) = Format.fprintf fmt "(%.*f, %d)" precision a b in
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [print_float_float_tuple_list ?prefix ?precision list] prints a list of [(float, float)] tuples to standard output.
+    Each tuple is formatted as [(f1, f2)], where [f1] and [f2] are floats with [precision] decimal places. Tuples are separated by a semicolon and a space.
+    The optional [prefix] argument (defaulting to an empty string if omitted) is printed before the list.
+    The optional [precision] argument (defaulting to 2 if omitted) sets the number of decimal places for the floats. *)
+let print_float_float_tuple_list ?(prefix = "") ?(precision = 2) list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt (a, b) = Format.fprintf fmt "(%.*f, %.*f)" precision a precision b in
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
 (** [strings_array ~prefix arr] converts the [arr] array to a list and prints it
     to the standard output with a given [prefix]. *)
 let strings_array ?(prefix = "") arr =
