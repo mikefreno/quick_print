@@ -6,12 +6,48 @@ let strings_list ?(prefix = "") list =
   Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
   Format.fprintf Format.std_formatter "]\n"
 
+(** [string_list_list ?prefix list] prints a list of string lists to standard output.
+    Each inner list is formatted as a bracketed, semicolon-separated sequence of strings (e.g., "[one; two; three]"). 
+    The inner lists themselves are also separated by semicolons and spaces. 
+    The optional [prefix] argument (defaulting to an empty string, if omitted) is printed before the list.*)
+let string_list_list ?(prefix = "") list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  
+  let pp_item_inner fmt item = Format.fprintf fmt "%s" item in
+  let pp_list_inner fmt inner_list = 
+    Format.fprintf fmt "[";
+    Format.pp_print_list ~pp_sep pp_item_inner fmt inner_list;
+    Format.fprintf fmt "]" 
+  in
+  
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_list_inner Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
 (** [chars_list ~prefix list] prints the [list] of chars to the standard output with the [prefix]. *)
 let chars_list ?(prefix = "") list =
   let pp_sep fmt () = Format.fprintf fmt "; " in
   let pp_item fmt item = Format.fprintf fmt "%c" item in
   Format.fprintf Format.std_formatter "%s[" prefix;
   Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [char_list_list ?prefix list] prints a list of char lists to standard output. 
+    Each inner list is formatted as a bracketed, semicolon-separated sequence of characters (e.g., "[a; b; c]"). 
+    The inner lists themselves are also separated by semicolons and spaces.
+    The optional [prefix] argument (defaulting to an empty string, if omitted) is printed before the list. *)
+let char_list_list ?(prefix = "") list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  
+  let pp_item_inner fmt item = Format.fprintf fmt "%c" item in
+  let pp_list_inner fmt inner_list = 
+    Format.fprintf fmt "[";
+    Format.pp_print_list ~pp_sep pp_item_inner fmt inner_list;
+    Format.fprintf fmt "]" 
+  in
+  
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_list_inner Format.std_formatter list;
   Format.fprintf Format.std_formatter "]\n"
 
 (** [int_list ~prefix list] prints the [list] of integers to the standard output with the [prefix]. *)
@@ -22,6 +58,24 @@ let int_list ?(prefix = "") list =
   Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
   Format.fprintf Format.std_formatter "]\n"
 
+(** [int_list_list ?prefix list] prints a list of int lists to standard output. 
+    Each inner list is formatted as a bracketed, semicolon-separated sequence of integers (e.g., "[1; 2; 3]"). 
+    The inner lists themselves are also separated by semicolons and spaces.
+    The optional [prefix] argument (defaulting to an empty string, if omitted) is printed before the list. *)
+let int_list_list ?(prefix = "") list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  
+  let pp_item_inner fmt item = Format.fprintf fmt "%d" item in
+  let pp_list_inner fmt inner_list = 
+    Format.fprintf fmt "[";
+    Format.pp_print_list ~pp_sep pp_item_inner fmt inner_list;
+    Format.fprintf fmt "]" 
+  in
+  
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_list_inner Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
 (** [float_list ~prefix ~precision list] prints the [list] of floats to the standard output with
    a given [precision] and with the [prefix]. *)
 let float_list ?(prefix = "") ?(precision = 2) list =
@@ -29,6 +83,26 @@ let float_list ?(prefix = "") ?(precision = 2) list =
   let pp_item fmt item = Format.fprintf fmt "@[<v 0>%.*f@]" precision item in
   Format.fprintf Format.std_formatter "%s[" prefix;
   Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [float_list_list ?prefix ?precision list] prints a list of float lists to standard output.
+    Each inner list is formatted as a bracketed, semicolon-separated sequence of floats (e.g., "[1.23; 4.56; 7.89]"),  
+    with [precision] decimal places. 
+    The inner lists themselves are also separated by semicolons and spaces. 
+    The optional [prefix] argument (defaulting to an empty string, if omitted) is printed before the list.
+    The optional [precision] argument (defaulting to 2 if omitted) specifies the number of decimal places for the floating-point values. *)
+let float_list_list ?(prefix = "") ?(precision = 2) list =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  
+  let pp_item_inner fmt item = Format.fprintf fmt "%.*f" precision item in
+  let pp_list_inner fmt inner_list = 
+    Format.fprintf fmt "[";
+    Format.pp_print_list ~pp_sep pp_item_inner fmt inner_list;
+    Format.fprintf fmt "]" 
+  in
+  
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_list_inner Format.std_formatter list;
   Format.fprintf Format.std_formatter "]\n"
 
 (** [string_string_tuple_list ?prefix list] prints a list of [(string, string)] tuples to standard output.
