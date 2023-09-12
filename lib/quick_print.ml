@@ -43,6 +43,24 @@ let string_array_list ?(prefix = "") list =
   Format.pp_print_list ~pp_sep pp_array_inner Format.std_formatter list;
   Format.fprintf Format.std_formatter "]\n"
 
+(** [string_array_array ?prefix arr] prints an array of string arrays to standard output.
+    Each inner array is formatted as a bracketed, semicolon-separated sequence of strings 
+    enclosed by array brackets (e.g., "[|one; two; three|]"). 
+    The inner arrays themselves are also separated by semicolons and spaces. 
+    The optional [prefix] argument (defaulting to an empty string, if omitted) is printed before the array. *)
+let string_array_array ?(prefix = "") arr =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+
+  let pp_item_inner fmt item = Format.fprintf fmt "%s" item in
+  let pp_array_inner fmt inner_array = 
+    Format.fprintf fmt "[|";
+    Format.pp_print_list ~pp_sep pp_item_inner fmt (Array.to_list inner_array);
+    Format.fprintf fmt "|]" 
+  in
+
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_array_inner Format.std_formatter (Array.to_list arr);
+  Format.fprintf Format.std_formatter "]\n"
 
 (** [chars_list ~prefix list] prints the [list] of chars to the standard output with the [prefix]. *)
 let chars_list ?(prefix = "") list =
@@ -89,6 +107,24 @@ let char_array_list ?(prefix = "") list =
   Format.pp_print_list ~pp_sep pp_array_inner Format.std_formatter list;
   Format.fprintf Format.std_formatter "]\n"
 
+  (** [char_array_array ?prefix arr] prints an array of char arrays to standard output.
+    Each inner array is formatted as a bracketed, semicolon-separated sequence of chars
+    enclosed by array brackets (e.g., "[|a; b; c|]"). 
+    The inner arrays themselves are also separated by semicolons and spaces. 
+    The optional [prefix] argument (defaulting to an empty string, if omitted) is printed before the array. *)
+let char_array_array ?(prefix = "") arr =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+
+  let pp_item_inner fmt item = Format.fprintf fmt "%c" item in
+  let pp_array_inner fmt inner_array = 
+    Format.fprintf fmt "[|";
+    Format.pp_print_list ~pp_sep pp_item_inner fmt (Array.to_list inner_array);
+    Format.fprintf fmt "|]" 
+  in
+
+  Format.fprintf Format.std_formatter "%s[|" prefix;
+  Format.pp_print_list ~pp_sep pp_array_inner Format.std_formatter (Array.to_list arr);
+  Format.fprintf Format.std_formatter "|]\n"
 
 (** [int_list ~prefix list] prints the [list] of integers to the standard output with the [prefix]. *)
 let int_list ?(prefix = "") list =
@@ -136,6 +172,25 @@ let int_array_list ?(prefix = "") list =
   Format.fprintf Format.std_formatter "]\n"
 
 
+(** [int_array_array ?prefix arr] prints an array of integer arrays to standard output.
+    Each inner array is formatted as a bracketed, semicolon-separated sequence of integers
+    enclosed by array brackets (e.g., "[|1; 2; 3|]"). 
+    The inner arrays themselves are also separated by semicolons and spaces. 
+    The optional [prefix] argument (defaulting to an empty string, if omitted) is printed before the array. *)
+let int_array_array ?(prefix = "") arr = 
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  
+  let pp_item_inner fmt item = Format.fprintf fmt "%d" item in
+  let pp_array_inner fmt inner_array = 
+    Format.fprintf fmt "[|";
+    Format.pp_print_list ~pp_sep pp_item_inner fmt (Array.to_list inner_array);
+    Format.fprintf fmt "|]" 
+  in
+
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_array_inner Format.std_formatter (Array.to_list arr);
+  Format.fprintf Format.std_formatter "]\n"
+
 (** [float_list ~prefix ~precision list] prints the [list] of floats to the standard output with
    a given [precision] and with the [prefix]. *)
 let float_list ?(prefix = "") ?(precision = 2) list =
@@ -144,7 +199,6 @@ let float_list ?(prefix = "") ?(precision = 2) list =
   Format.fprintf Format.std_formatter "%s[" prefix;
   Format.pp_print_list ~pp_sep pp_item Format.std_formatter list;
   Format.fprintf Format.std_formatter "]\n"
-
 
 (** [float_list_list ?prefix ?precision list] prints a list of float lists to standard output.
     Each inner list is formatted as a bracketed, semicolon-separated sequence of floats (e.g., "[1.23; 4.56; 7.89]"),  
@@ -183,6 +237,26 @@ let float_array_list ?(prefix = "") ?(precision = 2) list =
 
   Format.fprintf Format.std_formatter "%s[" prefix;
   Format.pp_print_list ~pp_sep pp_array_inner Format.std_formatter list;
+  Format.fprintf Format.std_formatter "]\n"
+
+(** [float_array_array ?prefix ?precision arr] prints an array of float arrays to standard output.
+    Each inner array is formatted as a bracketed, semicolon-separated sequence of floats
+    enclosed by array brackets (e.g., "[|1.00; 2.00; 3.00|]"). 
+    The inner arrays themselves are also separated by semicolons and spaces. 
+    The optional [prefix] argument (defaulting to an empty string, if omitted) is printed before the array.
+    The optional [precision] argument specifies the number of decimal places for the floats (defaulting to 2 if omitted). *)
+let float_array_array ?(prefix = "") ?(precision = 2) arr = 
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+
+  let pp_item_inner fmt item = Format.fprintf fmt "@[<v 0>%.*f@]" precision item in
+  let pp_array_inner fmt inner_array =
+      Format.fprintf fmt "[|";
+      Format.pp_print_list ~pp_sep pp_item_inner fmt (Array.to_list inner_array);
+      Format.fprintf fmt "|]" 
+  in
+  
+  Format.fprintf Format.std_formatter "%s[" prefix;
+  Format.pp_print_list ~pp_sep pp_array_inner Format.std_formatter (Array.to_list arr);
   Format.fprintf Format.std_formatter "]\n"
 
 
@@ -700,3 +774,60 @@ let hashtable_char_float_list ?(prefix = "") ?(precision = 2) ht =
       Printf.printf "(%c, %s); " k float_list)
     ht;
   print_endline "}"
+
+(** [tuple_strings_list_strings_list ?prefix (list1, list2)] 
+    prints the tuple of string lists [(list1, list2)] to the standard output. Each string from the lists is separated by a semicolon and a space "; ".
+    The tuple is presented in this string format: "([list1], [list2])". *)
+let tuple_strings_list_strings_list ?(prefix = "") (list1, list2) =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt item = Format.fprintf fmt "%s" item in
+  Format.fprintf Format.std_formatter "%s(" prefix;
+  Format.fprintf Format.std_formatter "[";
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list1;
+  Format.fprintf Format.std_formatter "], [";
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list2;
+  Format.fprintf Format.std_formatter "]";
+  Format.fprintf Format.std_formatter ")\n"
+
+
+(** [tuple_chars_list_chars_list ?prefix (list1, list2)]
+    prints optional [prefix] and the tuple of character lists [(list1, list2)] to the standard output, with each character separated by a semicolon and a space "; ".
+    The tuple is presented in this string format: "([list1], [list2])". *)
+let tuple_chars_list_chars_list ?(prefix = "") (list1, list2) =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt item = Format.fprintf fmt "'%c'" item in
+  Format.fprintf Format.std_formatter "%s(" prefix;
+  Format.fprintf Format.std_formatter "[";
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list1;
+  Format.fprintf Format.std_formatter "], [";
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list2;
+  Format.fprintf Format.std_formatter "]";
+  Format.fprintf Format.std_formatter ")\n"
+
+(** [tuple_ints_list_ints_list ?prefix (list1, list2)]
+    prints optional [prefix] and the tuple of integer lists [(list1, list2)] to the standard output, with each integer separated by a semicolon and a space "; ".
+    The tuple is presented in this string format: "([list1], [list2])". *)
+let tuple_ints_list_ints_list ?(prefix = "") (list1, list2) =
+  let pp_sep fmt () = Format.fprintf fmt "; " in
+  let pp_item fmt item = Format.fprintf fmt "%d" item in
+  Format.fprintf Format.std_formatter "%s(" prefix;
+  Format.fprintf Format.std_formatter "[";
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list1;
+  Format.fprintf Format.std_formatter "], [";
+  Format.pp_print_list ~pp_sep pp_item Format.std_formatter list2;
+  Format.fprintf Format.std_formatter "]";
+  Format.fprintf Format.std_formatter ")\n"
+
+(** [tuple_floats_list_floats_list ?prefix ?precision (list1, list2)]
+    prints the optional [prefix] and the tuple of float lists [(list1, list2)] as a formatted string with each number separated by a semicolon and a space "; ". 
+    The [precision] parameter defines how many decimal places each float should have, defaulting to 2.
+    The tuple is presented in this string format: "([list1], [list2])". *)
+let tuple_floats_list_floats_list ?(prefix = "") ?(precision = 2) (list1, list2) =
+  let float_list_to_str list =
+    let float_to_str f = Printf.sprintf "%.*f" precision f in
+    let s = "[" ^ String.concat "; " (List.map float_to_str list) ^ "]" in
+    s
+  in
+  let float_list1 = float_list_to_str list1 in
+  let float_list2 = float_list_to_str list2 in
+  Printf.printf "%s(%s, %s)\n" prefix float_list1 float_list2
