@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>Quick_print (quick_print.Quick_print)</title>
@@ -72,6 +72,60 @@
         </div>
       </div>
       <div class="odoc-spec">
+        <div class="spec value anchored" id="val-string_array_list">
+          <a href="#val-string_array_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> string_array_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>string array</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>string_array_list ?prefix list</code> prints a list of string
+            arrays to standard output. Each inner array is formatted as a
+            bracketed, semicolon-separated sequence of strings enclosed by array
+            brackets (e.g., &quot;<code>|one; two; three|</code>&quot;). The
+            inner arrays themselves are also separated by semicolons and spaces.
+            The optional <code>prefix</code> argument (defaulting to an empty
+            string, if omitted) is printed before the list.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-string_array_array">
+          <a href="#val-string_array_array" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> string_array_array :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>string array</span> array</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>string_array_array ?prefix arr</code> prints an array of
+            string arrays to standard output. Each inner array is formatted as a
+            bracketed, semicolon-separated sequence of strings enclosed by array
+            brackets (e.g., &quot;<code>|one; two; three|</code>&quot;). The
+            inner arrays themselves are also separated by semicolons and spaces.
+            The optional <code>prefix</code> argument (defaulting to an empty
+            string, if omitted) is printed before the array.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
         <div class="spec value anchored" id="val-chars_list">
           <a href="#val-chars_list" class="anchor"></a
           ><code
@@ -122,6 +176,60 @@
         </div>
       </div>
       <div class="odoc-spec">
+        <div class="spec value anchored" id="val-char_array_list">
+          <a href="#val-char_array_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> char_array_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>char array</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>char_array_list ?prefix list</code> prints a list of character
+            arrays to standard output. Each inner array is formatted as a
+            bracketed, semicolon-separated sequence of characters enclosed by
+            array brackets (e.g., &quot;<code>|'a'; 'b'; 'c'|</code>&quot;). The
+            inner arrays themselves are also separated by semicolons and spaces.
+            The optional <code>prefix</code> argument (defaulting to an empty
+            string, if omitted) is printed before the list.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-char_array_array">
+          <a href="#val-char_array_array" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> char_array_array :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>char array</span> array</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>char_array_array ?prefix arr</code> prints an array of char
+            arrays to standard output. Each inner array is formatted as a
+            bracketed, semicolon-separated sequence of chars enclosed by array
+            brackets (e.g., &quot;<code>|a; b; c|</code>&quot;). The inner
+            arrays themselves are also separated by semicolons and spaces. The
+            optional <code>prefix</code> argument (defaulting to an empty
+            string, if omitted) is printed before the array.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
         <div class="spec value anchored" id="val-int_list">
           <a href="#val-int_list" class="anchor"></a
           ><code
@@ -168,6 +276,60 @@
             semicolons and spaces. The optional <code>prefix</code> argument
             (defaulting to an empty string, if omitted) is printed before the
             list.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-int_array_list">
+          <a href="#val-int_array_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> int_array_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>int array</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>int_array_list ?prefix list</code> prints a list of integer
+            arrays to standard output. Each inner array is formatted as a
+            bracketed, semicolon-separated sequence of integers enclosed by
+            array brackets (e.g., &quot;<code>|1; 2; 3|</code>&quot;). The inner
+            arrays themselves are also separated by semicolons and spaces. The
+            optional <code>prefix</code> argument (defaulting to an empty
+            string, if omitted) is printed before the list.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-int_array_array">
+          <a href="#val-int_array_array" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> int_array_array :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>int array</span> array</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>int_array_array ?prefix arr</code> prints an array of integer
+            arrays to standard output. Each inner array is formatted as a
+            bracketed, semicolon-separated sequence of integers enclosed by
+            array brackets (e.g., &quot;<code>|1; 2; 3|</code>&quot;). The inner
+            arrays themselves are also separated by semicolons and spaces. The
+            optional <code>prefix</code> argument (defaulting to an empty
+            string, if omitted) is printed before the array.
           </p>
         </div>
       </div>
@@ -224,6 +386,68 @@
             <code>precision</code> argument (defaulting to 2 if omitted)
             specifies the number of decimal places for the floating-point
             values.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-float_array_list">
+          <a href="#val-float_array_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> float_array_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span>?precision:int <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>float array</span> list</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>float_array_list ?prefix ?precision list</code> prints a list
+            of float arrays to standard output. Each inner array is formatted as
+            a bracketed, semicolon-separated sequence of floats enclosed by
+            array brackets (e.g., &quot;<code>|1.00; 2.00; 3.00|</code>&quot;).
+            The inner arrays themselves are also separated by semicolons and
+            spaces. The optional <code>prefix</code> argument (defaulting to an
+            empty string, if omitted) is printed before the list. The optional
+            <code>precision</code> argument (defaulting to 2, if omitted)
+            determines the number of decimal places for each float.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-float_array_array">
+          <a href="#val-float_array_array" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> float_array_array :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span>?precision:int <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span><span>float array</span> array</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>float_array_array ?prefix ?precision arr</code> prints an
+            array of float arrays to standard output. Each inner array is
+            formatted as a bracketed, semicolon-separated sequence of floats
+            enclosed by array brackets (e.g., &quot;<code
+              >|1.00; 2.00; 3.00|</code
+            >&quot;). The inner arrays themselves are also separated by
+            semicolons and spaces. The optional <code>prefix</code> argument
+            (defaulting to an empty string, if omitted) is printed before the
+            array. The optional <code>precision</code> argument specifies the
+            number of decimal places for the floats (defaulting to 2 if
+            omitted).
           </p>
         </div>
       </div>
@@ -1321,6 +1545,123 @@
             <code>prefix</code>. Floating point numbers are formatted with the
             provided <code>precision</code>. The floats in each list are joined
             with '; ' and enclosed in brackets .
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div
+          class="spec value anchored"
+          id="val-tuple_strings_list_strings_list"
+        >
+          <a href="#val-tuple_strings_list_strings_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> tuple_strings_list_strings_list
+              :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span
+                  >(<span>string list</span> * <span>string list</span>)</span
+                >
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>tuple_strings_list_strings_list ?prefix (list1, list2)</code>
+            prints the tuple of string lists <code>(list1, list2)</code> to the
+            standard output. Each string from the lists is separated by a
+            semicolon and a space &quot;; &quot;. The tuple is presented in this
+            string format: &quot;(<code>list1</code>, <code>list2</code>)&quot;.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-tuple_chars_list_chars_list">
+          <a href="#val-tuple_chars_list_chars_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> tuple_chars_list_chars_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span>(<span>char list</span> * <span>char list</span>)</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>tuple_chars_list_chars_list ?prefix (list1, list2)</code>
+            prints optional <code>prefix</code> and the tuple of character lists
+            <code>(list1, list2)</code> to the standard output, with each
+            character separated by a semicolon and a space &quot;; &quot;. The
+            tuple is presented in this string format: &quot;(<code>list1</code>,
+            <code>list2</code>)&quot;.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-tuple_ints_list_ints_list">
+          <a href="#val-tuple_ints_list_ints_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> tuple_ints_list_ints_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span>(<span>int list</span> * <span>int list</span>)</span>
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code>tuple_ints_list_ints_list ?prefix (list1, list2)</code> prints
+            optional <code>prefix</code> and the tuple of integer lists
+            <code>(list1, list2)</code> to the standard output, with each
+            integer separated by a semicolon and a space &quot;; &quot;. The
+            tuple is presented in this string format: &quot;(<code>list1</code>,
+            <code>list2</code>)&quot;.
+          </p>
+        </div>
+      </div>
+      <div class="odoc-spec">
+        <div class="spec value anchored" id="val-tuple_floats_list_floats_list">
+          <a href="#val-tuple_floats_list_floats_list" class="anchor"></a
+          ><code
+            ><span
+              ><span class="keyword">val</span> tuple_floats_list_floats_list :
+              <span>?prefix:string <span class="arrow">&#45;&gt;</span></span>
+              <span>?precision:int <span class="arrow">&#45;&gt;</span></span>
+              <span
+                ><span
+                  >(<span>float list</span> * <span>float list</span>)</span
+                >
+                <span class="arrow">&#45;&gt;</span></span
+              >
+              unit</span
+            ></code
+          >
+        </div>
+        <div class="spec-doc">
+          <p>
+            <code
+              >tuple_floats_list_floats_list ?prefix ?precision (list1,
+              list2)</code
+            >
+            prints the optional <code>prefix</code> and the tuple of float lists
+            <code>(list1, list2)</code> as a formatted string with each number
+            separated by a semicolon and a space &quot;; &quot;. The
+            <code>precision</code> parameter defines how many decimal places
+            each float should have, defaulting to 2. The tuple is presented in
+            this stri ng format: &quot;(<code>list1</code>,
+            <code>list2</code>)&quot;.
           </p>
         </div>
       </div>
