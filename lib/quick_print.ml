@@ -821,7 +821,7 @@ let tuple_ints_list_ints_list ?(prefix = "") (list1, list2) =
 (** [tuple_floats_list_floats_list ?prefix ?precision (list1, list2)]
     prints the optional [prefix] and the tuple of float lists [(list1, list2)] as a formatted string with each number separated by a semicolon and a space "; ". 
     The [precision] parameter defines how many decimal places each float should have, defaulting to 2.
-    The tuple is presented in this string format: "([list1], [list2])". *)
+    The tuple is presented in this stri ng format: "([list1], [list2])". *)
 let tuple_floats_list_floats_list ?(prefix = "") ?(precision = 2) (list1, list2) =
   let float_list_to_str list =
     let float_to_str f = Printf.sprintf "%.*f" precision f in
