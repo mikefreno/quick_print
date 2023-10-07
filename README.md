@@ -2,6 +2,8 @@
 
 quick_print is an OCaml library that allows quick and easy pretty-printing of lists, arrays, Hashtables and more. Its main goal is to simplify data visualization during learning and debugging.
 
+I will be adding more structures as I have a need for them
+
 ## Installation
 
 Install quick_print with OPAM:
